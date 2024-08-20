@@ -44,3 +44,35 @@ function prom(){
 let cliente1 = prompt("Ingrese la orden de llegada")
 Resultado= prom()
 console.log(Resultado)
+
+// Funcion con parametro y con retorno 
+function multiplicacion(a, b) {
+
+      multi = a * b;
+
+      return multi;
+    }
+console.log(multiplicacion(2,5));
+
+// Funcion sin parametros con retorno
+
+function sum() {
+      suma = 3 + 2 
+      return (suma)
+}
+console.log(sum());
+
+
+// Funcion con parametros sin retorno
+
+function nombre(n) {
+      console.log("Hola ", n);
+}
+nombre("Zully")
+
+// Funcion sin parametros sin retorno
+
+function profesor() {
+      console.log("Hola teacher");
+}
+profesor()
