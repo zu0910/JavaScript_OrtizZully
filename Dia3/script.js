@@ -4,7 +4,11 @@ function NumRecur(n,k) {
     if (n.length ===1){
         return parseInt(n);
     }
-
+    var p=""
+    for (let repetir=0; repetir<k;repetir++){
+        p+=n
+    }
+    console.log((p));
     let sum = 0;
     for (let i = 0; i < n.length; i++){
         sum += parseInt(n[i]);
