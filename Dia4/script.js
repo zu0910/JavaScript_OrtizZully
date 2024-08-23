@@ -130,7 +130,8 @@ while (booleano1==true){
             var newopcUno = prompt("Ingrese una de las opciones del submenu crear\n");
             console.clear()// Si la opcion elegida es uno se hara
             if(newopcUno==1){
-                let Nivel=prompt("Ingrese el nivel educativo en el que te encuetres\n");// Se define varias variables donde cada uno el usuario tendra que ingresar informacion diferente
+                console.clear()
+                let Nivel=prompt("Ingrese el nivel educativo en el que te encuentres\n");// Se define varias variables donde cada uno el usuario tendra que ingresar informacion diferente
                 let Institucion=prompt("Ingrese el nombre de la institución que estas\n");
                 let Titulo=prompt("Ingrese el titulo que estas ejerciendo");
                 let Ano_inicio=prompt("Ingrese el año que iniciaste\n");
@@ -140,6 +141,7 @@ while (booleano1==true){
             }
             // Si la opcion es dos 
             else if(newopcUno==2){
+                console.clear()
                 //  Se define varias variables donde cada uno el usuario tendra que ingresar informacion diferente
                 let Puesto=prompt("Ingrese el puesto en el que estas\n");
                 let Empresa=prompt("Ingresa el nombre de la empresa\n");
@@ -166,16 +168,21 @@ while (booleano1==true){
             console.clear();
             // Si la opcion elegida es uno se hara
             if (newopcDos==1){
+                console.clear()
                 // se imprimira la consola la informacion personal
                 console.log("--------Informacion Personal--------");
+
                 // se mostrara la consola el nombre donde entrara al diccionario info en la parte informacion personal en la posicion de nombre y asi con los demas
                 console.log("Nombre:",info["informacion_personal"]["nombre"]);
                 console.log("Edad: ",info["informacion_personal"]["edad"],"años");
                 console.log("Direccion \n Calle:",info["informacion_personal"]["direccion"]["calle"]," \n Numero: ",info["informacion_personal"]["direccion"]["numero"],"\nCiudad:",info["informacion_personal"]["direccion"]["ciudad"]);
                 console.log("Contato \n Correo:",info["informacion_personal"]["contacto"]["correo"],"\nTelefono:",info["informacion_personal"]["contacto"]["telefono"]);
+                console.log("---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+                
             }
             // Si la opcion es dos se hara 
             else if(newopcDos==2){
+                console.clear()
                 console.log("-------Historial Educativo-----------");
                 // es un bucle que va a leer el historial educativo
                 for ( var i of info["historial_educativo"]){
@@ -183,10 +190,13 @@ while (booleano1==true){
                     console.log("Institucion",i["institucion"]);
                     console.log("Año de inicio",i["anio_inicio"]);
                     console.log("Año de fin",i["anio_fin"]);
+                    console.log("-------------------------------------");
+                    
                 }
                 
             }
             else if(newopcDos==3){
+                console.clear()
                 console.log("--------- Experiencia Laboral ---------- ");
                 // es un bucle que va a leer la experiencia laboral
                 for ( var i of info["experiencia_laboral"]){
@@ -194,6 +204,8 @@ while (booleano1==true){
                     console.log("Empresa",i["empresa"]);
                     console.log("Periodo",i["periodo"]);
                     console.log("Responsabilidades",i["responsabilidades"]);
+                    console.log("------------------------------------------------");
+                    
                 }
             }
             // Si la opcion elegisa es cuatro se finalizara el programa 
@@ -213,6 +225,7 @@ while (booleano1==true){
             var opcInfoPer = prompt("Ingrese la opcion que desees modificar\n")
             // Depende de la opcion que el usuario ingrese se hara 
             if (opcInfoPer==1){
+                console.clear()
                 // Se definira variables donde el nuevo valor se posiciorara en el valor antieguo y se actualizara
                 let newNombre = prompt("Ingrese el nuevo nombre");
                 info["informacion_personal"]["nombre"]=newNombre
@@ -221,6 +234,7 @@ while (booleano1==true){
                 
             }
             else if (opcInfoPer==2){
+                console.clear()
                 let newEdad = prompt("Ingrese la nueva edad");
                 info["informacion_personal"]["edad"]=newEdad
 
@@ -228,6 +242,7 @@ while (booleano1==true){
                 
             }
             else if (opcInfoPer==3){
+                console.clear()
                 let newCalle=prompt("Ingresa la nueva calle");
                 let newNumero=prompt("Ingresa el nuevo numero");
                 let newCiudad=prompt("Ingresa la nueva ciudad");
@@ -237,6 +252,7 @@ while (booleano1==true){
                 
             }
             else if (opcInfoPer==4){
+                console.clear()
                 let newCorreo = prompt("Ingrese el nuevo correo");
                 let newTelefono = prompt("Ingrese el nuevo telefono");
                 info["informacion_personal"]["contacto"]={"correo":newCorreo,"telefono":newTelefono}
@@ -259,6 +275,7 @@ while (booleano1==true){
             let opcDel = prompt("Ingrese la opcion que desees eliminar")
 
             if (opcDel==1){
+                console.clear()
                 console.log("------------ HISTORIAL EDUCATIVO ----------------");
                 let cont=1// Se crea un contador donde enumerara la cantidad de informacion que esta en info
                 for ( var i of info["historial_educativo"]){
@@ -275,6 +292,7 @@ while (booleano1==true){
                 info["historial_educativo"].splice(digito-1,1)
             }
             else if  (opcDel==2){
+                console.clear()
                 console.log("--------- EXPERIECIA LABORAL ---------- ");
                 let conta=1
                 for ( var i of info["experiencia_laboral"]){
