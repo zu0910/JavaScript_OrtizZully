@@ -116,7 +116,8 @@ function del(){
 var booleano1=true;
 while (booleano1==true){
     console.clear();// limpiar consola
-    menuPrin()// Se muestra la funcion del menu principal
+   
+
     // crear una variable donde se guardara la opcion que el usuario digite en la consola.
     var opcMenuPrin = prompt ("Ingrese unas de las opciones del menu principal: \n");
     console.clear();
