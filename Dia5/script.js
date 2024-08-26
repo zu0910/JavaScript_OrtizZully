@@ -71,8 +71,6 @@ function addProduct(product) {
 // Funcion para ver todos los productos
 function viewProduct() {
   console.log("----------- View Product Management ------------");
-  //forEach recorre todos los productos que esta en el inventario producto
-  // asiganacion de variable product que es la que tendra cada dato del inventario
   for (var i of inventory.products) {
     console.log("ID: ", i.id);
     console.log("Name: ", i.name);
@@ -80,6 +78,8 @@ function viewProduct() {
     console.log("price: ", i.price);
     console.log("Quantity in Stock: ", i.quantityInStock);
     console.log("Supplier Id: ", i.supplierId);
+    console.log("---------------------------------------------");
+    
   }
 }
 
@@ -145,9 +145,7 @@ function supplierMenu() {
 
 // funcion para añadir un nuevo proveedor 
 function addSupplier(supplier) {
-
   inventory.suppliers.push(supplier);
-
   console.log("Supplier was successful added");
 
 }
@@ -162,6 +160,8 @@ function viewSupplier() {
     console.log("Email: ", i.contactInfo.phone);
     console.log("Phone: ", i.contactInfo.email);
     console.log("Address: ", i.contactInfo.address);
+    console.log("----------------------------------------------");
+    
   }
 }
 
@@ -243,6 +243,8 @@ function viewOrder() {
     console.log("Quantity: ", i.quantity);
     console.log("Order Date: ", i.orderDate);
     console.log("Status: ", i.status);
+    console.log("--------------------------------------------");
+    
   }
 }
 
@@ -308,10 +310,14 @@ function checkStockLevels() {
 
   console.log("--------Stocks Levels --------------------");
   for (var i of inventory.products){
-    console.log("Product: ", i.name);
-    console.log("Quantity in stock: ", i.quantityInStock);
-    console.log("----------------------------------------");
-    
+    if (i.quantityInStock<10){
+      console.log("Product: ", i.name);
+      console.log("Quantity in stock: ", i.quantityInStock);
+      console.log("Category: ", i.category);
+      console.log("Price: ", i.price);
+      console.log("SupplierID: ", i.supplierId);
+      console.log("----------------------------------------");
+    }
   }
 }
 
@@ -324,11 +330,8 @@ function restockProduct(id, quantity) {
 
    if (product) {
      product.quantityInStock += quantity; // Incrementar la cantidad en stock
-     console.log(`Restocked ${quantity} units. New stock for ${product.name}: ${product.quantityInStock}`);
      console.log("Restocked", quantity);
      console.log("New stock for", product.name ,":", product.quantityInStock);
-     
-     
    } else {
      console.log("Product not found.");
    }
@@ -349,7 +352,7 @@ function reportMenu() {
 
 function generateSalesReport(startDate, endDate) {
 
-  let generate = inventory.orders.filter(g => g.orderDate >= startDate && orderDate<=endDate);
+  let generate = inventory.orders.filter(g => g.orderDate >= startDate && new Date(orderDate)<=endDate);
    
   console.log("-------- Sales Report --------");
 
@@ -371,9 +374,13 @@ function generateSalesReport(startDate, endDate) {
 function generateInventoryReport() {
   console.log("-------- Inventory Report --------");
   for (var i of inventory.products){
-    console.log("Product: ", i.name);
-    console.log("Ctegory: ", i.category);
-    console.log("Product: ", i,quantityInStock);
+    console.log("Name: ", i.name);
+    console.log("Category: ", i.category);
+    console.log("Price",i.price);
+    console.log("Product: ", i.quantityInStock);
+    console.log("Total stock", i.price*i.quantityInStock);
+    console.log("----------------------------------------");
+    
   }
 }
 
@@ -391,10 +398,98 @@ function searchFilterMenu() {
 
 function searchProducts(query) {
 //Implement a function searchProducts(query) that allows users to search for products by name, category, or supplier.
+switch (query) {
+  case "1":
+    var namePro = prompt("Enter product name that you want")
+    for (var i of inventory.products) {
+      if (namePro== i.name){
+        console.log("ID: ", i.id);
+        console.log("Name: ", i.name);
+        console.log("Category: ", i.category);
+        console.log("price: ", i.price);
+        console.log("Quantity in Stock: ", i.quantityInStock);
+        console.log("Supplier Id: ", i.supplierId);
+      }
+    }
+    break;
+
+  case "2":
+    var categoryPro = prompt("Enter category product that you want");
+    for (var i of inventory.products) {
+      if (categoryPro== i.category){
+        console.log("ID: ", i.id);
+        console.log("Name: ", i.name);
+        console.log("Category: ", i.category);
+        console.log("price: ", i.price);
+        console.log("Quantity in Stock: ", i.quantityInStock);
+        console.log("Supplier Id: ", i.supplierId);
+      }
+    }
+    break
+
+  case "3":
+    var supplierPro = Number(prompt("Enter supplier id that you want"));
+      for ( var i of inventory.products) {
+        if(supplierPro==i.supplierId){
+          console.log("ID: ", i.id);
+          console.log("Name: ", i.name);
+          console.log("Category: ", i.category);
+          console.log("price: ", i.price);
+          console.log("Quantity in Stock: ", i.quantityInStock);
+          console.log("Supplier Id: ", i.supplierId);
+        }
+      }
+    break
+  default:
+    console.log("Invalid option");
+    break;
+  }
 }
+
 
 function filterOrders(criteria) {
 // Implement a function filterOrders(criteria) that allows users to filter orders by status, date range, or product.
+switch (criteria) {
+  case "1":
+    var statusOpc = prompt("Enter status of the order");
+    for ( var i of inventory.orders){
+      if(statusOpc==i.status){
+        console.log("Order ID: ", i.id);
+        console.log("Product ID: ", i.productId);
+        console.log("Quantity: ", i.quantity);
+        console.log("Order Date: ", i.orderDate);
+        console.log("Status: ", i.status);
+      }
+    }
+    break;
+  case "2":
+    var rangeOpc = prompt("Enter order range of the order");
+    for ( var i of inventory.orders){
+      if(rangeOpc==i.orderDate){
+        console.log("Order ID: ", i.id);
+        console.log("Product ID: ", i.productId);
+        console.log("Quantity: ", i.quantity);
+        console.log("Order Date: ", i.orderDate);
+        console.log("Status: ", i.status);
+      }
+    }
+    break
+  case "3":
+    var productOpc = prompt("Enter product id of the order");
+    for (var i of inventory.orders){
+      if(productOpc==i.productId){
+        console.log("Order ID: ", i.id);
+        console.log("Product ID: ", i.productId);
+        console.log("Quantity: ", i.quantity);
+        console.log("Order Date: ", i.orderDate);
+        console.log("Status: ", i.status);
+      }
+    }
+    break
+  default:
+    console.log("Invalid option");
+    break;
+}
 }
 
 
@@ -416,12 +511,12 @@ while (booleanito == true) {
 
         case '1':
           let newProduct = {
-            id: prompt("Write producto ID"),
+            id: parseInt(prompt("Write producto ID")),
             name: prompt("Write product name"),
-            category: prompt("Write category product"),
-            price: prompt("write price product"),
-            quantityInStock: prompt("Write quantity in stock product"),
-            supplierId: prompt("Write supplier id product"),
+            category: parseInt(prompt("Write category product")),
+            price: parseFloat(prompt("write price product")),
+            quantityInStock: parseInt(prompt("Write quantity in stock product")),
+            supplierId: parseInt(prompt("Write supplier id product")),
           };
           addProduct(newProduct);
           break;
@@ -486,6 +581,8 @@ while (booleanito == true) {
 
         case '2':
           viewSupplier();
+
+          break;
 
         case '3':
           let idSup = prompt("Write the number of the id you want to update");
@@ -616,7 +713,9 @@ while (booleanito == true) {
         case '1':
           let startDate = prompt("Enter the start date (YYYY-MM-DD):");
           let endDate = prompt("Enter the end date (YYYY-MM-DD):");
-          generateSalesReport(startDate, endDate);
+          let newstartd = new Date (startDate)
+          let newend = new Date (endDate)
+          generateSalesReport(newstartd, newend);
 
           break;
 
@@ -625,7 +724,7 @@ while (booleanito == true) {
           break;
 
         case '3':
-          mainMenu
+          mainMenu();
           break;
       
         default:
@@ -642,15 +741,15 @@ while (booleanito == true) {
 
       switch (opcSearch) {
         case "1":
-          
+          searchProducts(opcSearch);
           break;
 
         case "2":
-          
+          filterOrders(opcSearch)
           break;
 
         case "3":
-          
+          console.log("Invalid option. Please choose again.");
           break;
 
         default:
@@ -658,7 +757,6 @@ while (booleanito == true) {
           searchFilterMenu();
           break;
       }
-
       break;
 
     case '7':
