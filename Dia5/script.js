@@ -201,14 +201,14 @@ function deleteSupplier(id) {
     console.log("----------------------------------------");
     cont++;
   }
-  let findsuppli = inventory.suppliers.findIndex(s => s.id == id);
+  let findsupplier = inventory.suppliers.findIndex(s => s.id == id);
 
   if (findProduct !== -1){
-    inventory.suppliers.splice(findsuppli,1);
+    inventory.suppliers.splice(findsupplier,1);
 
-    console.log("the product was successfully removed.");
+    console.log("the supplier was successfully removed.");
   } else {
-    console.log("Product not found.");
+    console.log("Supplier not found.");
   }
 }
 
@@ -316,8 +316,24 @@ function checkStockLevels() {
 }
 
 function restockProduct(id, quantity) {
+  id = parseInt(id);
+  quantity = parseInt(quantity)
 
-}
+   // Buscar el producto por ID
+   let product = inventory.products.find(product => product.id == id);
+
+   if (product) {
+     product.quantityInStock += quantity; // Incrementar la cantidad en stock
+     console.log(`Restocked ${quantity} units. New stock for ${product.name}: ${product.quantityInStock}`);
+     console.log("Restocked", quantity);
+     console.log("New stock for", product.name ,":", product.quantityInStock);
+     
+     
+   } else {
+     console.log("Product not found.");
+   }
+
+} 
 
 // ----------------------------------------------------------------------------------------------------------------------------------
 
@@ -333,11 +349,32 @@ function reportMenu() {
 
 function generateSalesReport(startDate, endDate) {
 
+  let generate = inventory.orders.filter(g => g.orderDate >= startDate && orderDate<=endDate);
+   
+  console.log("-------- Sales Report --------");
 
+  // Si se encuentran órdenes dentro del rango de fechas, imprimir los detalles
+  if (generate.length > 0) {
+    for ( var i of generate){
+      console.log("Order ID:",i.orderId);
+      console.log("Order Date", i.orderDate);
+      console.log("Product ID:", i.productId);
+      console.log("Quantity sold:", order.quantity);
+      console.log("-------------------------------");
+    }
+  } else {
+    // Si no se encuentran órdenes, imprimir un mensaje indicando que no hay ventas registradas en ese período
+    console.log("No sales");
+  }
 }
 
 function generateInventoryReport() {
-
+  console.log("-------- Inventory Report --------");
+  for (var i of inventory.products){
+    console.log("Product: ", i.name);
+    console.log("Ctegory: ", i.category);
+    console.log("Product: ", i,quantityInStock);
+  }
 }
 
 // ----------------------------------------------------------------------------------------------------------------------------------
@@ -353,11 +390,11 @@ function searchFilterMenu() {
 }
 
 function searchProducts(query) {
-
+//Implement a function searchProducts(query) that allows users to search for products by name, category, or supplier.
 }
 
 function filterOrders(criteria) {
-
+// Implement a function filterOrders(criteria) that allows users to filter orders by status, date range, or product.
 }
 
 
@@ -551,7 +588,9 @@ while (booleanito == true) {
           break;
 
         case '2':
-
+          let Id = prompt("Enter the product ID to restock:");
+          let Quantity = prompt("Enter the quantity to add to stock:");
+          restockProduct(Id, Quantity);
           break;
 
         case '3':
@@ -573,12 +612,16 @@ while (booleanito == true) {
       var opcReport = prompt("Write one of the options from the report menu");
 
       switch (opcReport) {
+
         case '1':
-          
+          let startDate = prompt("Enter the start date (YYYY-MM-DD):");
+          let endDate = prompt("Enter the end date (YYYY-MM-DD):");
+          generateSalesReport(startDate, endDate);
+
           break;
 
         case '2':
-          
+          generateInventoryReport();
           break;
 
         case '3':
@@ -591,13 +634,30 @@ while (booleanito == true) {
 
           break;
       }
-
-
-
       break;
 
     case '6':
       searchFilterMenu()
+      var opcSearch = prompt("Write one of the options from the search filter menu")
+
+      switch (opcSearch) {
+        case "1":
+          
+          break;
+
+        case "2":
+          
+          break;
+
+        case "3":
+          
+          break;
+
+        default:
+          console.log("Invalid option. Please choose again.");
+          searchFilterMenu();
+          break;
+      }
 
       break;
 
