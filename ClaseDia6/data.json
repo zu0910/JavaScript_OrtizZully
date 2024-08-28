@@ -1,0 +1,17 @@
+[
+    {
+        "id" : 1,
+        "nombre" : "Pedro",
+        "cargo" : "Trainer"
+    },
+    {
+        "id" : 2,
+        "nombre" : "Brayan",
+        "cargo" : "Camper"
+    },
+    {
+        "id" : 3,
+        "nombre" : "Stiven",
+        "cargo" : "Coordinador"
+    }
+]

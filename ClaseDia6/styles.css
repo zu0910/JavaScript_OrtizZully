@@ -1,0 +1,66 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#ButtonAlert{
+    background-color: red;
+    border-radius: 10px;
+    border: 1px solid red;
+    color: white;
+    font-size: 4rem;
+    width: 20rem;
+    height: 5rem;
+    margin: 1rem;
+}
+
+#ButtonAsync{
+    background-color: rgb(19, 91, 201);
+    border-radius: 10px;
+    border: 2px solid rgb(19, 91, 201);
+    color: white;
+    font-size: 4rem;
+    width: 20rem;
+    height: 5rem;
+    margin: 1rem;
+}
+
+#button1{
+    background-color: rgb(31, 243, 144);
+    border-radius: 10px;
+    border: 2px solid rgb(31, 243, 144);
+    color: white;
+    font-size: 4rem;
+    width: 20rem;
+    height: 5rem;
+    margin: 1rem;
+}
+
+#button2{
+    background-color: rgb(226, 69, 205);
+    border-radius: 10px;
+    border: 2px solid rgb(226, 69, 205);
+    color: white;
+    font-size: 4rem;
+    width: 20rem;
+    height: 5rem;
+    margin: 1rem;
+}
+
+#output{
+    position: absolute;
+    text-align: center;
+    border-radius: 10px;
+    color: white;
+    font-size: 4rem;
+    width: 25rem;
+    height: 5rem;
+    margin: 1rem;
+    margin-top: 20rem;
+}
+
+h1{
+    color: blueviolet;
+    font-size: 1vw;
+}

@@ -1,0 +1,82 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    background-color: rgb(231, 224, 224);
+}
+/*-------------------------------- GENERAL ------------------------------------------*/
+#title{
+    text-align: center;
+    margin-top: 1vw;
+    font-size: 3vw;
+}
+#contenedorPrincipal{
+    width: 65vw;
+    margin: 2vw auto;
+    padding: 1vw;
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+/*------------------------PRODUCTOS---------------------------------------------------*/
+#title2{
+    margin-top: 2vw;
+    font-size: 2vw;
+    background-color: #f8bfcb;
+    text-align: center;
+}
+/*--------------------------- VER PRODUCTOS--------------------------------------------------*/
+p{
+    background-color: #ebeee5;
+    text-align: center;
+    font-size: 1.5vw;
+    margin-top: 1vw;
+}
+/* TABLA DE VER PRODUCTOS */
+table {
+    width: 65vw;
+    border-collapse: collapse;/*quitar doble linea del cuadro*/
+}
+
+table, th, td {
+    border: 0.1vw solid #beb9b9;
+}
+th, td {
+    padding: 0.5vw;
+    text-align: center;
+}
+/*input y label de productos*/
+form {
+    width: 60vw;
+    display: flex;
+    flex-direction: column;
+}
+label {
+    margin-left: -37vw;
+    margin-top: 2vw;
+    text-align: center;
+    font-size: 1.3vw;
+}
+input {
+    padding: 0.5vw;
+    margin-left: 17vw;
+    margin-top: -1.5vw;
+    width: 40vw;
+}
+
+button {
+    margin-top: 1vw;
+    padding: 0.5vw;
+    font-size: 1vw;
+    width: 10vw;
+    margin-left: 30vw;
+    border-radius: 1vw;
+    background-color: #5cb85c;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #4cae4c;
+}
