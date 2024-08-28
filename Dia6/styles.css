@@ -17,6 +17,7 @@ body{
     padding: 1vw;
     background: #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border: 0 solid transparent;
 }
 /*------------------------PRODUCTOS---------------------------------------------------*/
 #title2{
@@ -33,6 +34,7 @@ p{
     margin-top: 1vw;
 }
 /* TABLA DE VER PRODUCTOS */
+
 table {
     width: 65vw;
     border-collapse: collapse;/*quitar doble linea del cuadro*/
@@ -40,9 +42,10 @@ table {
 
 table, th, td {
     border: 0.1vw solid #beb9b9;
+    width: 23vw;
 }
 th, td {
-    padding: 0.5vw;
+    padding: 0.47vw;
     text-align: center;
 }
 /*input y label de productos*/
@@ -80,3 +83,9 @@ button {
 button:hover {
     background-color: #4cae4c;
 }
+/*
+button[onclick*="editProduct"]{
+}
+button[onclick*="deleteProduct"]{
+}
+*/
