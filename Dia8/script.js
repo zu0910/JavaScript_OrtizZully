@@ -46,7 +46,7 @@ function view(link){
              <tr class="table-dark">
                 <td scope="row">Homeworld: </td>
                 <td>
-                    <ul>
+                    <ul class="list-group">
                         <li id="homeworld" class="list-group-item">
                             <table class="table table-sm">
                                 <tbody>
@@ -61,7 +61,7 @@ function view(link){
             <tr class="table-dark">
                 <td scope="row">Films: </td>
                 <td>
-                    <ul>
+                    <ul  class="list-group">
                         <li id="fil" class="list-group-item">
                             <table>
                                 <tbody>
@@ -76,7 +76,7 @@ function view(link){
             <tr class="table-dark">
                 <th scope="row">Species: </th>
                 <td>
-                <ul>
+                <ul class="list-group">
                     <li id="specie" class="list-group-item">
                     <table>
                         <tbody>
@@ -91,10 +91,10 @@ function view(link){
                 </td>
                 </td>
             </tr>
-            <tr class="table-dark">
+            <tr class="table-dark" border-radius: 1vw;>
                 <th scope="row">Vehicles: </th>
                 <td>
-                <ul>
+                <ul class="list-group">
                     <li id="vehi" class="list-group-item">
                     <table>
                         <tbody>
@@ -112,7 +112,7 @@ function view(link){
             <tr class="table-dark">
                 <th scope="row">Starships: </th>
                 <td>
-                <ul>
+                <ul class="list-group">
                     <li id="stars" class="list-group-item">
                     <table>
                         <tbody>
@@ -148,9 +148,9 @@ function view(link){
         .then(homeworld => {
             document.getElementById("homeworld").innerHTML+=`
 
-                <table>
+                <table >
                     <tbody>
-                        <table class="table table-light">
+                        <table class="table table-light" >
                             <tr>
                                 <th>Name:</th>
                                 <td> ${homeworld.name}</td>
