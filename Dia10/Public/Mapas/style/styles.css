@@ -1,0 +1,32 @@
+#flexmaps{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 5em;
+}
+#caja3{
+    text-align: center;
+}
+input{
+    width: 40em;
+}
+.card{
+    margin-top: 4em;
+}
+.card img{
+    -webkit-box-shadow: 1px 2px 42px -13px rgba(0,0,0,1);
+    -moz-box-shadow: 1px 2px 42px -13px rgba(0,0,0,1);
+    box-shadow: 1px 2px 42px -13px rgba(0,0,0,1);
+}
+#flexmaps h4{
+    position: absolute;
+    top: -7.5em;
+    left: 1em;
+    color: rgb(255, 255, 255);
+}
+#flexmaps h3{
+    color: white;
+    position: absolute;
+    top: 6.5em;
+    left: 0.5em;
+}
