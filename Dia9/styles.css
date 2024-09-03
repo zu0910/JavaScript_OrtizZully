@@ -5,6 +5,7 @@
     font-family: 'Oxanium', cursive;
 }
 #principal{
+    
     background: linear-gradient(#73bbf6,  #ebf5fd);
     width: 1400px;
     height: 700px;
@@ -13,16 +14,23 @@
     align-items: center;
 
 }
-img{
-    width: 390px;
-    height: 550px;
+#fondo{
+    width: 425px;
+    height: 639px;
+    background-image: url(img/pokedex.png);
 }
 #texto{
     display: flex;
-    margin-left: 690px;
+    height: 50px;
+    margin-left: 660px;
     margin-top: -320px;
     font-size: 20px;
     font-weight: bold;
+    color: gray;
+}
+p{
+    color: black;
+    margin-left: 5px;
 }
 #gif_poke{
     position: absolute;
@@ -34,19 +42,26 @@ img{
     justify-content: center;
     align-items: center;
 }
+#gif_poke img{
+    width: 90px;
+    height: 90px;
+}
 #form{
     margin-left: 550px;
-    margin-top: 50px;
+    margin-top: 20px;
 }
 input{
     width: 270px;
     height: 40px;
     border-radius: 7px;
+    box-shadow: -3px 2px gray,
+    -4px 6px black;
+    padding-left: 12px;
 }
 
 #next{
-    margin-left: 5px;
-    margin-top: 60px;
+    margin-left: 40px;
+    margin-top: 80px;
     width: 125px;
     height: 40px;
     background-color: #424242;
@@ -54,9 +69,12 @@ input{
 button{
     box-shadow: -4px 3px 1px 1px #212221;
 }
+button:active{
+    box-shadow: inset -4px 3px 1px 1px #212221;
+}
 #prev{
-    margin-left: 547px;
-    margin-top: 60px;
+    margin-left: 540px;
+    margin-top: 80px;
     width: 125px;
     height: 40px;
     background-color: #424242;

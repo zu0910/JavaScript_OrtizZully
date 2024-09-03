@@ -18,6 +18,7 @@ function look_for(name_poke){
             <img src="${data.sprites.other.showdown.front_default}">
             <audio autoplay src="${data.cries.latest}">
             </audio>
+            
             `
             document.getElementById("texto").innerHTML=""
             document.getElementById("texto").innerHTML += `
