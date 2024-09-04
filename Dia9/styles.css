@@ -54,11 +54,10 @@ input{
     width: 270px;
     height: 40px;
     border-radius: 7px;
-    box-shadow: -3px 2px gray,
-    -4px 6px black;
+    box-shadow: -2px 3px 0 #888,-5px 8px 0 #333;
     padding-left: 12px;
 }
-
+    
 #next{
     margin-left: 40px;
     margin-top: 80px;
@@ -67,10 +66,19 @@ input{
     background-color: #424242;
 }
 button{
-    box-shadow: -4px 3px 1px 1px #212221;
+    width: 50%;
+    padding: 4%;
+    border: 2px solid #000;
+    border-radius: 5px;
+    font-size: clamp(8px,5vw,1rem);
+    font-weight: 600;
+    color: white;
+    background-color: #444;
+    box-shadow: -2px 3px 0 #222,-4px 6px #000;
 }
 button:active{
-    box-shadow: inset -4px 3px 1px 1px #212221;
+    box-shadow: inset -4px 4px 0 #222;
+    font-size: 0.9rem;
 }
 #prev{
     margin-left: 540px;
