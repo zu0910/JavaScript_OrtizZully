@@ -1,0 +1,69 @@
+@import "https://fonts.googleapis.com/css?family=Ubuntu:300,400,500";@import "https://fonts.googleapis.com/css?family=Raleway:400";
+
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: #cecece;
+}
+#negro{
+    background-color: #26282a;
+    width: 100vw;
+    height: 40vh;
+}
+#box-white{
+    width: 80vw;
+    height: 40vw;
+    background-color: #fefefe;
+    margin-left: 10vw;
+    margin-top: -17vw;
+    border: 1px solid rgb(173, 173, 173);
+}
+#box-gray{
+    width: 79.9vw;
+    height: 10vw;
+    background-color: #f7f7f7;
+    border: 1px solid rgb(173, 173, 173);
+}
+#photo{
+    width: 12vw;
+    height: 12vw;
+    border: 1px solid rgb(173, 173, 173);
+    background-color: white;
+    border-radius: 100%;
+    margin-left: 35vw;
+    margin-top: -5vw;
+}
+#img img{
+    width: 11vw;
+    height: 11vw;
+    border-radius: 100%;
+    margin-left: 0.5vw;
+    margin-top: 0.5vw;
+}
+#iconos{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 8vw;
+    overflow: hidden;
+    height: 3.5vw;
+}
+.icon img{
+    width: 4vw;
+    height: 6vw;
+}
+.icon:hover{
+    transform: translateY(-3.2vw);
+    transition: .2s;
+}
+#text{
+    text-align: center;
+    margin-top: 2vw;
+    font-size: 1vw;
+}
+#negrita{
+    text-align: center;
+    font-size: 3vw;
+    font-weight: bold;
+}
