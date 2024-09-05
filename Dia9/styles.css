@@ -5,26 +5,24 @@
     font-family: 'Oxanium', cursive;
 }
 #principal{
-    
     background: linear-gradient(#73bbf6,  #ebf5fd);
-    width: 1400px;
-    height: 700px;
+    width: 100vw;
+    height: 100vh;
     display: flex;
     justify-content: center;
-    align-items: center;
-
 }
 #fondo{
     width: 425px;
     height: 639px;
+    margin-top: 3rem;
     background-image: url(img/pokedex.png);
 }
 #texto{
     display: flex;
     height: 50px;
-    margin-left: 660px;
-    margin-top: -320px;
-    font-size: 20px;
+    margin-left: 160px;
+    margin-top: 5px;
+    font-size: 25px;
     font-weight: bold;
     color: gray;
 }
@@ -33,37 +31,43 @@ p{
     margin-left: 5px;
 }
 #gif_poke{
-    position: absolute;
     width: 200px;
     height: 130px;
-    margin-top: -470px;
-    margin-left: 580px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    margin-left: 165px;
+    margin-top: 210px;
 }
 #gif_poke img{
-    width: 90px;
-    height: 90px;
+    width: 100px;
+    height: 100px;
 }
 #form{
-    margin-left: 550px;
-    margin-top: 20px;
+    margin-left: 47px;
+    margin-top: 24px;
 }
 input{
-    width: 270px;
-    height: 40px;
-    border-radius: 7px;
-    box-shadow: -2px 3px 0 #888,-5px 8px 0 #333;
+    width: 290px;
+    height: 47px;
     padding-left: 12px;
+    border: 2px solid #333;
+    border-radius: 5px;
+    box-shadow: -3px 4px 0 #888,-5px 7px 0 #333;
 }
     
 #next{
-    margin-left: 40px;
+    margin-left: 15px;
     margin-top: 80px;
-    width: 125px;
-    height: 40px;
-    background-color: #424242;
+    width: 130px;
+    height: 45px;
+    background-color: #444;
+    border: 2px solid #000;
+}
+#prev{
+    margin-left: 60px;
+    margin-top: 80px;
+    width: 130px;
+    height: 45px;
+    border: 2px solid #000;
+    background-color: #444;
 }
 button{
     width: 50%;
@@ -79,11 +83,4 @@ button{
 button:active{
     box-shadow: inset -4px 4px 0 #222;
     font-size: 0.9rem;
-}
-#prev{
-    margin-left: 540px;
-    margin-top: 80px;
-    width: 125px;
-    height: 40px;
-    background-color: #424242;
 }
