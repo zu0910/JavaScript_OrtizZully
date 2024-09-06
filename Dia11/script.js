@@ -1,3 +1,15 @@
+
+    let iconos = document.getElementsByClassName("icon") 
+    let last = iconos[0]
+    for(const i of iconos){
+        i.addEventListener("mouseenter",()=>{
+            if (!i.classList.contains("selected")){
+                last.classList.remove("selected")
+                last=i;
+                i.classList.add("selected")
+            }
+        })
+    }
 let  datas=[]
 fetch("https://randomuser.me/api/")
     .then( res => res.json())
@@ -31,25 +43,20 @@ fetch("https://randomuser.me/api/")
         <p> My email address is </p>                     
         `
     }
-    const birthday = new Date(datas[0].results[0].dob.date);
-        const date = birthday.toLocaleDateString('en-US',{
-            year: "numeric",
-            month: "numeric",
-            day: "numeric"
-        })
     function aparecer_birth(){
-        document.getElementById("negrita").innerHTML = `
-        ${dateBirth}
-        `
         document.getElementById("text").innerHTML = `
         <p> My birthday is </p>                     
         `
-        const birthday = new Date (datas.results[0].dob.date);
+        
+        
+        const birthday = new Date (datas[0].results[0].dob.date);
         const dateBirth = birthday.toLocaleDateString('en-US',{
             year : 'numeric',
             month : "numeric",
-            day : "numeric"
+            day : "numeric",
         })
+        document.getElementById("negrita").innerHTML = dateBirth
+        
     }
     function aparecer_location(){
         document.getElementById("negrita").innerHTML = `
@@ -79,3 +86,6 @@ fetch("https://randomuser.me/api/")
         document.getElementById("negrita").innerHTML = ""
         document.getElementById("text").innerHTML =""
     }
+
+
+

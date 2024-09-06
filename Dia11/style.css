@@ -45,6 +45,7 @@ body{
 }
 
 #text{
+    height: 3rem;
     text-align: center;
     margin-top: 2vw;
     font-size: 1.5vw;
@@ -52,56 +53,62 @@ body{
     font-weight: 300;
 }
 #negrita{
+    height: 5rem;
     text-align: center;
     font-size: 3vw;
 }
 #iconos{
     display: flex;
-    justify-content: space-evenly;
-    width: 50vw;
-    margin-left: 15vw;
-    height: 4vw;
     overflow: hidden;
-    margin-top: 7vw;
+    justify-content: space-evenly;
+    width: 50rem;
+    height: 4rem;
+    margin-top: 7rem;
+    margin-left: 25rem;
 }
 #user{
     background-image: url(./img/user.png);
     background-size: contain;
-    width: 4vw;
-    height: 13vw;
-    margin-top: -4.2vw;
+    width: 4rem;
+    height: 13rem;
+    margin-top: -3.8rem;
 }
 #email{
     background-image: url(./img/mail.png);
-    width: 3.8vw;
-    margin-top: -4vw;
-    height: 10.3vw;
+    width: 4rem;
+    background-size: contain;
+    height: 13rem;
+    margin-top: -4.5rem;
 }
 #birth{
     background-image: url(./img/birthday.png);
-    width: 4vw;
-    height: 13vw;
-    margin-top: -4.3vw;
+    width: 4rem;
+    background-size: contain;
+    height: 13rem;
+    margin-top: -4rem;
 }
 #location{
     background-image: url(./img/location.png);
-    width: 4vw;
-    height: 13vw;
-    margin-top: -4.5vw;
+    width: 4rem;
+    background-size: contain;
+    height: 13rem;
+    margin-top: -4.5rem;
 }
 #phone{
     background-image: url(./img/phone.png);
-    width: 4vw;
-    height: 13vw;
-    margin-top: -4.5vw;
+    width: 4rem;
+    background-size: contain;
+    height: 13rem;
+    margin-top: -4.3rem;
 }
 #pass{
     background-image: url(./img/password.png);
-    width: 4vw;
-    height: 13vw;
-    margin-top: -4.5vw;
+    width: 4rem;
+    background-size: contain;
+    height: 13rem;
+    margin-top: -4.6rem;
 }
-.icon:hover{
+.selected{
     transform: translateY(-3.6vw);
     transition: .2s;
 }
