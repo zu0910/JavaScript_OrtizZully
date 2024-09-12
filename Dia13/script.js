@@ -13,12 +13,20 @@ function mostrar(link) {
             fetch(drawLink)
                 .then(res => res.json())
                 .then(cards => {
-                    var randomIndex = Math.floor(Math.random() * 9); // Seleccionamos un índice aleatorio entre 0 y 8
-                    selectedCard = cards.cards[randomIndex]; // La carta seleccionada será una de las 9
+                    var random = Math.floor(Math.random() * 9); // Seleccionamos un índice aleatorio entre 0 y 8
+                    selectedCard = cards.cards[random]; // La carta seleccionada será una de las 9
                     mostrarCartaSeleccionada(selectedCard);
                     mostrarCartasMesa(cards.cards); // Mostramos las 9 cartas
                 });
         });
+}
+function mostrar_info(){
+    document.getElementById("infoButon").innerHTML = `
+    <p>INSTRUCCIONES <br> El objetivo es encontrar la carta que muestra en la parte principal</p>     
+    `
+}
+function reset(){
+    document.getElementById("infoButon").innerHTML = ""
 }
 
 function mostrarCartaSeleccionada(card) {
@@ -56,7 +64,10 @@ function mostrarCartasMesa(cartas) {
     });
 }
 
+var intentos = 0;
+
 function verificarCarta(carta) {
+    
     if (carta.code === selectedCard.code) {
         alert('¡Has adivinado la carta correcta!');
     } else {

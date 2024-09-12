@@ -40,7 +40,14 @@ button{
 #red{
     position: absolute;
     margin-left: 20rem;
-    margin-top: -2.5rem;
+    margin-top: 1rem;
+    
+}
+#infoButon{
+    position: absolute;
+    color: white;
+    margin-left: 53rem;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 #carta img{
     position: relative;
