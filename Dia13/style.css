@@ -3,26 +3,30 @@
     padding: 0;
 }
 body{
+    background-image: url(fondo.jpg);
     background-color: black;
     text-align: center;
     justify-content: center;
 }
 #principal{
-    width: 60rem;
-    height: 55rem;
-    background-color: #ebe1c7;
-    margin: 3rem auto;
+    width: 50rem;
+    height: 45rem;
+    background-color: transparent;
+    border: 2px solid rgb(255, 255, 255, .2);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+    margin: 4rem auto;
     border-radius: 10px;
 }
 h1.title{
     padding-top: 2rem;
+    color: white;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 #content{
     width: 40rem;
     height: 38rem;
-    background-color: #559447;
-    margin: 4rem auto;
-    border-radius: 100%;
+    margin: 4rem 16rem;
 }
 button{
     width: 3rem;
@@ -35,15 +39,66 @@ button{
 }
 #red{
     position: absolute;
-    margin-left: 25rem;
-    margin-top: -1rem;
+    margin-left: 20rem;
+    margin-top: -2.5rem;
 }
 #carta img{
+    position: relative;
+    width: 9rem;
+    height: 12rem;
+    margin-left: -55rem;
+    top:  -23rem;
+}
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas */
+    grid-gap: 0.9rem; /* Espacio entre las cartas */
+    padding: 6rem;
+}
+.cards img {
     width: 8rem;
     height: 10rem;
-    margin-right: 45rem;
-    margin-top: -30rem;
+    cursor: pointer;
+    transition: transform 0.3s;
+    margin-top: -5rem;
+    margin-left: -6rem;
 }
-.cards{
-    display: grid;
+.cards img:hover {
+    transform: scale(1.1); /* Aumenta el tamaño de la carta cuando pasas el mouse por encima */
+}
+.card {
+    width: 8rem;
+    height: 10rem;
+    position: relative;
+    perspective: 1000px;
+    cursor: pointer;
+}
+.carticas {
+    position: relative;
+    width: 8rem;
+    height: 10rem;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.card.voltear .carticas {
+    transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+    position: absolute;
+    width: 8rem;
+    height: 10rem;
+    backface-visibility: hidden;
+    border-radius: 10px;
+}
+
+.card-front {
+    background-color: #bbb;
+    margin-top: -5rem;
+    margin-left: -3rem;
+}
+
+.card-back {
+    transform: rotateY(180deg);
 }
