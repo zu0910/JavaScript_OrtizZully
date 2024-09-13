@@ -10,7 +10,7 @@ body{
 }
 #principal{
     width: 50rem;
-    height: 45rem;
+    height: 47rem;
     background-color: transparent;
     border: 2px solid rgb(255, 255, 255, .2);
     backdrop-filter: blur(20px);
@@ -108,4 +108,22 @@ button{
 
 .card-back {
     transform: rotateY(180deg);
+}
+#intento{
+    color: white;
+    position: absolute;
+    bottom: 39rem;
+    font-size: 2rem;
+    left: 25rem;
+}
+#reiniciar button{
+    background-color: red;
+    position: absolute;
+    width: 12rem;
+    height: 3rem;
+    text-align: center;
+    border-radius: 30px;
+    bottom: 1.2rem;
+    font-size: 1.5rem;
+    left: 27rem;
 }

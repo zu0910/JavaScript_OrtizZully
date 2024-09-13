@@ -22,7 +22,7 @@ function mostrar(link) {
 }
 function mostrar_info(){
     document.getElementById("infoButon").innerHTML = `
-    <p>INSTRUCCIONES <br> El objetivo es encontrar la carta que muestra en la parte principal</p>     
+    <p>INSTRUCCIONES <br> El objetivo es encontrar la carta que muestra, CUIDADO SOLO TENDRAS TRES INTENTOS <br> suerte!!!!!!!</p>     
     `
 }
 function reset(){
@@ -64,13 +64,33 @@ function mostrarCartasMesa(cartas) {
     });
 }
 
-var intentos = 0;
+var intentos = 0;// contador de intentos
+var maxIntentos = 3;//Numero maximo de intentos
 
 function verificarCarta(carta) {
-    
+    intentos++;
+    document.getElementById("intento").innerHTML = `Intentos restantes: ${maxIntentos - intentos}`;
+
     if (carta.code === selectedCard.code) {
         alert('¡Has adivinado la carta correcta!');
+        mostrarOpcionReiniciar();
+    } else if (intentos >= maxIntentos) {
+        alert('Lo siento, has agotado todos tus intentos. La carta correcta era ' + selectedCard.code);
+        mostrarOpcionReiniciar();
     } else {
         alert('Esa no es la carta correcta, intenta de nuevo.');
     }
+}
+
+function mostrarOpcionReiniciar() {
+    document.getElementById("reiniciar").innerHTML = `
+        <button onclick="reiniciarJuego()">Volver a jugar</button>
+    `;
+}
+
+function reiniciarJuego() {
+    intentos = 0; // Reiniciar el contador de intentos
+    document.getElementById("intento").innerHTML = ''; // Limpiar el mensaje de intentos restantes
+    document.getElementById("reiniciar").innerHTML = ''; // Limpiar el botón de reinicio
+    mostrar(link); // Volver a cargar un nuevo juego
 }
